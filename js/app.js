@@ -4,16 +4,17 @@
 
 // Variables
 let score = 0;
-let timeleft = 60;
+let timeleft = 10;
 let gameStarted = false;
 let gameEnded = false;
 let interval = null;
 
-// HTML DOM
+// HTML DOM  // GET YOUR ELEMENTS
 const button1= document.getElementById("button1");
 const scoreDisplay= document.getElementById("scoreDisplay");
 const timerDisplay= document.getElementById("timerDisplay");
-
+const label1= document.getElementById("label1");
+const input1= document.getElementById("name");
 
 // UI Functions
 button1.addEventListener("click", ()=> {
@@ -24,6 +25,9 @@ button1.addEventListener("click", ()=> {
     startGame();
   }
 })
+// döljer elementen
+input1.style.display = "none";
+label1.style.display = "none";
 
 // Function
 function increaseScore() {
@@ -50,6 +54,8 @@ function  startGame(){
 function endGame() {
   gameEnded = true;
   clearInterval(interval);
+  input1.style.display = "block";
+  label1.style.display = "block";
+  button1.style.display = "none";
 }
 // TODO: make something appear
-
